@@ -1,4 +1,4 @@
-# SSE-for-E-commerce-with-Flask-and-ElasticSearch-Localhost-
+# SSE-for-E-commerce-with-Flask-and-ElasticSearch-Localhost
 A Semantic Search Engine Algorithm for E-commerce (via nltk, spacy, &amp; symspellpy)
 
 This is a reproducible SSE Algorithm develop for E-commerce. 
@@ -21,8 +21,10 @@ Download the Sample Data from the said link and place it on the same directory w
 Migrate the data to elasticsearch using the 'Data Pre Processing' code (last part).
 Run the 'web.py' program using Flask
 
-<h4> Sample Images <h4>
+<h4> Sample SSE Images <h4>
+<img src="https://github.com/nicss-m/SSE-for-E-commerce-with-Flask-and-ElasticSearch-Localhost-/blob/master/pants.png?raw=true" alt="404" width="1200"/>
 <img src="https://github.com/nicss-m/SSE-for-E-commerce-with-Flask-and-ElasticSearch-Localhost-/blob/master/bags.png?raw=true" alt="404" width="1200"/>
-
+<img src="https://github.com/nicss-m/SSE-for-E-commerce-with-Flask-and-ElasticSearch-Localhost-/blob/master/watch.png?raw=true" alt="404" width="1200"/>
+<img src="https://github.com/nicss-m/SSE-for-E-commerce-with-Flask-and-ElasticSearch-Localhost-/blob/master/sandals.png?raw=true" alt="404" width="1200"/>
 
 
