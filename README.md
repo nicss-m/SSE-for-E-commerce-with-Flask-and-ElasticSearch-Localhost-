@@ -23,8 +23,11 @@ Run the 'web.py' program using Flask
 
 <h4> Sample SSE Images <h4>
 <img src="https://github.com/nicss-m/SSE-for-E-commerce-with-Flask-and-ElasticSearch-Localhost-/blob/master/pants.png?raw=true" alt="404" width="1200"/>
+<hr>
 <img src="https://github.com/nicss-m/SSE-for-E-commerce-with-Flask-and-ElasticSearch-Localhost-/blob/master/bags.png?raw=true" alt="404" width="1200"/>
+<hr>
 <img src="https://github.com/nicss-m/SSE-for-E-commerce-with-Flask-and-ElasticSearch-Localhost-/blob/master/watch.png?raw=true" alt="404" width="1200"/>
+<hr>
 <img src="https://github.com/nicss-m/SSE-for-E-commerce-with-Flask-and-ElasticSearch-Localhost-/blob/master/sandals.png?raw=true" alt="404" width="1200"/>
 
 
