@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block search %}
+<!-----results----->
+<section class="small-container">
+    <div class=sort-by>
+        <div class="hint font-medium">
+            <i class="fa fa-lightbulb-o color-3"></i>
+            <span class="font-semi-medium color-3">Search result for <span class="emphasis-color font-family-3">{{searched}}</span></span>
+        </div>
+        <div class="sort" id="sort">
+            <div class="sort-nav">
+                <span class="word color-3">Sort by:</span>
+                <form action="{{url_for('rel_prod')}}"><button class="btn font-family-2 color-3" id="rel" type="submit" value=1>R<span>elevance</span></button></form>
+                <form action="{{url_for('lat_prod')}}"><button class="btn font-family-2 color-3" id="lat" type="submit" value=2>L<span>atest</span></button></form>
+                <form action="{{url_for('top_prod')}}"><button class="btn font-family-2 color-3" id="top" type="submit" value=3>T<span>op Sales</span></button></form>
+                <select class="font-family-2 color-3" name="prices" id="prices">
+                    <option selected disabled hidden>Price</option>
+                    <option>Price: Low to High</option>
+                    <option>Price: High to Low</option>
+                </select>
+            </div>
+            <div class="pagination">
+                <span class="num font-family-1 color-3" id="max-page" value="{{page_total}}"><span class="emphasis-color font-bold" id="min-page" value="{{page_num}}">{{page_num}}</span>/{{page_total}}</span>
+                <form action="{{url_for('prev_page')}}">
+                    <button class="b-nav" id='prev' type="submit">
+                        <i class="fa fa-angle-left"></i>
+                    </button>
+                </form>
+                <form action="{{url_for('next_page')}}">
+                    <button class="b-nav" id='next' type="submit">
+                        <i class="fa fa-angle-right"></i>
+                    </button>
+                </form>
+            </div>  
+        </div>
+    </div>
+    <div class="results">
+        <div class="row">
+            {% for product in products %}
+            <div class="col-4">
+                <img src="{{product['_source']['imageURLHighRes'].split()[0]}}" alt="No Image" onerror="this.onerror=null; this.src=&quot;{{url_for('static', filename='images/NoImg.png')}}&quot;">
+                <div class="shipping top">
+                    <i class="fa fa-truck"></i>
+                </div>
+                <div class="info">
+                    <p class="font-family-3 font-mini-medium p_title secondary-color">{{product['_source']['orig_title']}}</p>
+                    <div class="sub-infos">
+                        <p class="price font-family-2 font-mini-medium font-bold color-7"><span class="font-small">$ </span>{{product['_source']['price']}}</p>
+                        <div class="sub-info-1 font-mini-medium">
+                            <i class="fa fa-heart color-6 heart"></i>
+                            <div class="sub-info-2">
+                                <p class="font-family-2 font-small color-6">#{{product['_source']['rank']}}</p>
+                                <div class="rating font-mini">
+                                    {% for n in range(1,6) %}
+                                        {% if product['_source']['rating']|float >= n %}
+                                            <i class="fa fa-star color-6"></i>
+                                        {% else %}
+                                            <i class="fa fa-star-o color-6"></i>
+                                        {% endif %}
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>  
+            </div>
+            {% endfor %}
+        </div>     
+    </div>
+</section>
+{% endblock %}

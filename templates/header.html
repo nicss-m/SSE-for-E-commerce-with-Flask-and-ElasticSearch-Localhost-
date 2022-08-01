@@ -1,0 +1,73 @@
+{% block header%}
+<!-----header----->
+<header class="header primary-color">
+    <div class="container">
+        <div class="navbar">
+            <div>
+                <nav>
+                    <img class="menu-icon" src="{{url_for('static',filename='images/menu.png')}}" alt="" onclick="menutoggle()">
+                    <ul class="menu" id="MenuItems">
+                        <div>
+                            <li><a class="secondary-color font-family-1 font-small" href="" onclick="return false;">Seller Centre</a></li>
+                            <li><a class="secondary-color font-family-1 font-small" href="" onclick="return false;">Sell on Us</a></li>
+                            <li><a class="secondary-color font-family-1 font-small" href="" onclick="return false;">Download</a></li>
+                            <li>
+                                <a class="secondary-color font-family-1 font-small" href="" onclick="return false;">Follow us on
+                                    <i class="fa fa-facebook-square color-3"></i>
+                                    <i class="fa fa-instagram color-3"></i>
+                                </a>
+                            </li>
+                        </div>
+                        <div>
+                            <li><a class="secondary-color font-family-1 font-small" href="{{url_for('home')}}">Home</a></li>
+                            <li><a class="secondary-color font-family-1 font-small" href="{{url_for('home')}}#products">Products</a></li>
+                            <li><a class="secondary-color font-family-1 font-small" href="{{url_for('home')}}#team">Team</a></li>
+                            <li>
+                                <a class="secondary-color font-family-1 font-small" href="" onclick="return false;">Language
+                                    <i class="fa fa-language color-3"></i>
+                                </a>
+                            </li>
+                            <li class="account">
+                                <a class="emphasis-color font-family-1 font-small" href="" onclick="return false;">Account
+                                    <i class="fa fa-user emphasis-color"></i>
+                                </a>
+                            </li>  
+                        </div>
+                    </ul>
+                </nav>
+            </div>
+            <div class="search">
+                <a href="{{url_for('home')}}">
+                    <img class="logo" src="{{url_for('static',filename='images/thesis-logo.png')}}" alt="NA Image">
+                </a>
+                <form class="search-form" id="search-submit" autocomplete="off" spellcheck="false" action="{{url_for('search')}}" method="POST" >
+                    {{ form.hidden_tag() }}
+                    <div class="autocomplete">
+                        <input class="search-box" id="searchInput" type="text" placeholder="watch for men" name="searched" value="{{searched}}">
+                        <button class="search-btn font-semi-medium color-3" type="submit">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+                </form>
+                <button class="cart-button emphasis-bcolor font-medium">
+                    <span class="cart-word font-family-1 font-small primary-color">My Cart</span>
+                    <span class="line"></span>
+                    <i class="fa fa-cart-arrow-down primary-color"></i>
+                </button>    
+            </div> 
+            <div class="shortcuts">
+                <ul class>
+                    <li><a class="secondary-color font-family-1 font-mini" href="" onclick="return shortcuts(event)">Dress</a></li>
+                    <li><a class="secondary-color font-family-1 font-mini" href="" onclick="return shortcuts(event)">Croptop</a></li>
+                    <li><a class="secondary-color font-family-1 font-mini" href="" onclick="return shortcuts(event)">Shoes for Men</a></li>
+                    <li><a class="secondary-color font-family-1 font-mini" href="" onclick="return shortcuts(event)">Facemask</a></li>
+                    <li><a class="secondary-color font-family-1 font-mini" href="" onclick="return shortcuts(event)">Mask</a></li>
+                    <li><a class="secondary-color font-family-1 font-mini" href="" onclick="return shortcuts(event)">Watch for Men</a></li>
+                    <li><a class="secondary-color font-family-1 font-mini" href="" onclick="return shortcuts(event)">Watch for Women</a></li>
+                    <li><a class="secondary-color font-family-1 font-mini" href="" onclick="return shortcuts(event)">Tops</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+{% endblock%}

@@ -1,0 +1,204 @@
+{% extends "base.html" %}
+
+{% block home %}
+<!---- home ---->
+<!---- banners ---->
+<section class="banners">
+    <div class="container">
+        <div class="banner-container">
+            <div class="slider-banner">
+                <ul class="owl-carousel owl-theme" id="banners">
+                    <li class="item">
+                        <img src="{{url_for('static',filename='images/banner-wide-5.jpg')}}" alt="">
+                    </li>
+                    <li class="item">
+                        <img src="{{url_for('static',filename='images/banner-wide-2.png')}}" alt="">
+                    </li>
+                    <li class="item">
+                        <img src="{{url_for('static',filename='images/banner-wide-3.png')}}" alt="">
+                    </li>
+                </ul>
+            </div>
+            <div class="static-banner">
+                <img src="{{url_for('static',filename='images/banner-side-1.jpg')}}" alt="">
+                <img src="{{url_for('static',filename='images/banner-side-2.jpg')}}" alt="">
+            </div>
+        </div>
+    </div> 
+</section>
+
+<!---- featured products ----> 
+<section class="small-container" id="products">
+    <a href="{{url_for('search_top')}}" id="top-items">
+        <button class="title-button font-bold font-mini-medium font-family-2 emphasis-color primary-bcolor">
+            <p>Top Products</p>
+        </button>
+    </a>
+    <div class="row">
+        <div class="owl-contain owl-carousel owl-theme" id="f-products">
+            {% for product in top_prod%}
+            <div class="col-4 item">
+                <img src="{{product['_source']['imageURLHighRes'].split()[0]}}" alt="No Image" onerror="this.onerror=null; this.src=&quot;{{url_for('static', filename='images/NoImg.png')}}&quot;">
+                <div class="shipping top">
+                    <i class="fa fa-truck"></i>
+                </div>
+                <div class="info">
+                    <p class="font-family-3 font-mini-medium p_title secondary-color">{{product['_source']['orig_title']}}</p>
+                    <div class="sub-infos">
+                        <p class="price font-family-2 font-mini-medium font-bold color-7"><span class="font-small">$ </span>{{product['_source']['price']}}</p>
+                        <div class="sub-info-1 font-mini-medium">
+                            <i class="fa fa-heart color-6 heart"></i>
+                            <div class="sub-info-2">
+                                <p class="font-family-2 font-small color-6">#{{product['_source']['rank']}}</p>
+                                <div class="rating font-mini">
+                                    {% for n in range(1,6) %}
+                                        {% if product['_source']['rating']|float >= n %}
+                                            <i class="fa fa-star color-6"></i>
+                                        {% else %}
+                                            <i class="fa fa-star-o color-6"></i>
+                                        {% endif %}
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>  
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <a href="{{url_for('search_latest')}}" id="latest-items">
+        <button class="title-button font-bold font-mini-medium font-family-2 emphasis-color primary-bcolor">
+            <p>Latest Products</p>
+        </button>
+    </a>
+    <div class="row">
+        {% for product in latest_prod%}
+        <div class="col-4">
+            <img src="{{product['_source']['imageURLHighRes'].split()[0]}}" alt="No Image" onerror="this.onerror=null; this.src=&quot;{{url_for('static', filename='images/NoImg.png')}}&quot;">
+            <div class="shipping top">
+                <i class="fa fa-truck"></i>
+            </div>
+            <div class="info">
+                <p class="font-family-3 font-mini-medium p_title secondary-color">{{product['_source']['orig_title']}}</p>
+                <div class="sub-infos">
+                    <p class="price font-family-2 font-mini-medium font-bold color-7"><span class="font-small">$ </span>{{product['_source']['price']}}</p>
+                    <div class="sub-info-1 font-mini-medium">
+                        <i class="fa fa-heart color-6 heart"></i>
+                        <div class="sub-info-2">
+                            <p class="font-family-2 font-small color-6">#{{product['_source']['rank']}}</p>
+                            <div class="rating font-mini">
+                                {% for n in range(1,6) %}
+                                    {% if product['_source']['rating']|float >= n %}
+                                        <i class="fa fa-star color-6"></i>
+                                    {% else %}
+                                        <i class="fa fa-star-o color-6"></i>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>  
+        </div>
+        {% endfor %}
+    </div>    
+</section>
+
+<!---- offer ---->
+<section class="offer">
+    <div class="small-container">
+        <div class="row">
+            <div class="col-2">
+                <img src="{{url_for('static',filename='images/jacket.png')}}" alt="">
+            </div>
+            <div class="col-2">
+                    <p class="font-family-2 font-medium">Exclusively Available!</p>
+                    <h1 class="font-family-2">Black & White Bomber Jacket Mens</h1>
+                    <p class="font-family-3 font-mini-medium">The Bomber Jacket features a 10% discount. The Bomber Jacket features a 10% discount. 
+                        The Bomber Jacket features a 10% discount.</p>
+                    <a href="" class="btn primary-color emphasis-bcolor">Buy Now &#8594;</a>    
+            </div>
+        </div>
+    </div>
+</section>
+
+<!---- team ---->
+<section class="team" id="team">
+    <div class="small-container">
+        <h2 class="title secondary-color font-bold font-mid-medium font-family-2">The Team</h2>
+        <div class="row">
+            <div class="col-3">
+                <i class="fa fa-quote-left secondary-color"></i>
+                <p class="font-family-1 font-small color-3">Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+                <div class="rating">
+                    <i class="fa fa-star secondary-color"></i>
+                    <i class="fa fa-star secondary-color"></i>
+                    <i class="fa fa-star secondary-color"></i>
+                    <i class="fa fa-star secondary-color"></i>
+                    <i class="fa fa-star-half-o secondary-color"></i>
+                </div>
+                <img src="{{url_for('static',filename='images/muichiro.jpg')}}" alt="">
+                <h3 class="font-family-1 font-mini-medium">Nico Mangasar</h3>
+            </div>
+            <div class="col-3">
+                <i class="fa fa-quote-left secondary-color"></i>
+                <p class="font-family-1 font-small color-3">Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+                <div class="rating">
+                    <i class="fa fa-star secondary-color"></i>
+                    <i class="fa fa-star secondary-color"></i>
+                    <i class="fa fa-star secondary-color"></i>
+                    <i class="fa fa-star secondary-color"></i>
+                    <i class="fa fa-star-half-o secondary-color"></i>
+                </div>
+                <img src="{{url_for('static',filename='images/NoImg.png')}}" alt="">
+                <h3 class="font-family-1 font-mini-medium">Vanne Moelle Valdez</h3>
+            </div>
+            <div class="col-3">
+                <i class="fa fa-quote-left secondary-color"></i>
+                <p class="font-family-1 font-small color-3">Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+                <div class="rating">
+                    <i class="fa fa-star secondary-color"></i>
+                    <i class="fa fa-star secondary-color"></i>
+                    <i class="fa fa-star secondary-color"></i>
+                    <i class="fa fa-star secondary-color"></i>
+                    <i class="fa fa-star-half-o secondary-color"></i>
+                </div>
+                <img src="{{url_for('static',filename='images/NoImg.png')}}" alt="">
+                <h3 class="font-family-1 font-mini-medium">Andrei Mangaron</h3>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!---- partners ---->
+<section class="partners">
+    <div class="small-container">
+        <h2 class="title secondary-color font-bold font-mid-medium font-family-2">Partnerships</h2>
+        <div class="row">
+            <div class="col-5">
+                <a href="https://www.usep.edu.ph/ic/" target="_blank" rel="noopener noreferrer">
+                    <img src="{{url_for('static',filename='images/cic-logo-new.png')}}" alt="">
+                </a>     
+            </div>
+            <div class="col-5">
+                <a href="https://www.usep.edu.ph/" target="_blank" rel="noopener noreferrer">
+                    <img src="{{url_for('static',filename='images/usep-logo.png')}}" alt="">
+                </a>       
+            </div>
+            <div class="col-5">
+                <a href="https://www.usep.edu.ph/ic/" target="_blank" rel="noopener noreferrer">
+                    <img src="{{url_for('static',filename='images/cic-logo-new.png')}}" alt="">
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!---- footer ---->
+{% include "footer.html" %}
+
+{% endblock %}
