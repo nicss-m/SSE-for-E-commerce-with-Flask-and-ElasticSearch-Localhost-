@@ -2,7 +2,7 @@
 A Semantic Search Engine Algorithm for E-commerce (via nltk, spacy, &amp; symspellpy)
 
 This is a reproducible SSE Algorithm develop for E-commerce. 
-Testing was done on localhost using Flask Web framework and ElasticSearh along with Amazon Public Dataset.
+Testing was done on localhost using Flask Web framework and ElasticSearch along with Amazon Public Dataset.
 Sample Preprocess Data is available at https://drive.google.com/drive/u/0/folders/1lwLlLAAt9TpNJkG8tECAlGvXuK3ZLjm6
 
 Dependencies:
