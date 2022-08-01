@@ -21,7 +21,7 @@ Runtime Guide:
 * Migrate the data to elasticsearch using the 'Data Pre Processing' code (last part)
 * Run the 'web.py' program using Flask
 
-<h4> Sample SSE Images <h4>
+<h4> Sample SSE Searches<h4>
 <img src="https://github.com/nicss-m/SSE-for-E-commerce-with-Flask-and-ElasticSearch-Localhost-/blob/master/pants.png?raw=true" alt="404" width="1200"/>
 <hr>
 <img src="https://github.com/nicss-m/SSE-for-E-commerce-with-Flask-and-ElasticSearch-Localhost-/blob/master/bags.png?raw=true" alt="404" width="1200"/>
