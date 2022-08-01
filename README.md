@@ -1,4 +1,4 @@
-# SSE-for-E-commerce-with-Flask-and-ElasticSearch-Localhost
+# SSE-for-E-commerce-with-Flask-and-ElasticSearch-Localhosted
 A Semantic Search Engine Algorithm for E-commerce (via nltk, spacy, &amp; symspellpy)
 
 This is a reproducible SSE Algorithm develop for E-commerce. 
