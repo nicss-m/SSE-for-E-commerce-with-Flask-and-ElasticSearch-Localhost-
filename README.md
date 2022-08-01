@@ -17,9 +17,9 @@ wtforms==3.0.1
 elasticsearch==7.17.0
 
 Runtime Guide:
-<p>Download the Sample Data from the said link and place it on the same directory where the files is<p>
-<p>Migrate the data to elasticsearch using the 'Data Pre Processing' code (last part).<p>
-<p>Run the 'web.py' program using Flask<p>
+* Download the Sample Data from the said link and place it on the same directory where the files is
+* Migrate the data to elasticsearch using the 'Data Pre Processing' code (last part)
+* Run the 'web.py' program using Flask
 
 <h4> Sample SSE Images <h4>
 <img src="https://github.com/nicss-m/SSE-for-E-commerce-with-Flask-and-ElasticSearch-Localhost-/blob/master/pants.png?raw=true" alt="404" width="1200"/>
